@@ -7,6 +7,13 @@ namespace WebAPI_Template_Test1_MA.Controllers
     [ApiController]
     public class EmployeeController : ControllerBase
     {
+        private readonly IConfiguration _configuration;
+
+        public EmployeeController(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
         List<string> employeeNameList = new List<string>()
         {
             "Mohsin Ahmed",
@@ -31,9 +38,20 @@ namespace WebAPI_Template_Test1_MA.Controllers
         }
 
         [HttpGet]
+        [Route("Greetings")]
+        public IActionResult GetGreetings()
+        {
+            return Ok(_configuration["Greeting"]);
+        }
+
+        [HttpGet]
         [Route("{id}")]
         public IActionResult GetEmployeeById(int id)
         {
+            if(id == 4)
+            {
+                throw new Exception("Error Occurred");
+            }
             
             return Ok(empList.GetValueOrDefault(id));
         }

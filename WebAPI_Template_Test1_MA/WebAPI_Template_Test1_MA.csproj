@@ -4,9 +4,13 @@
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationInsightsResourceId>/subscriptions/47a9c793-6816-45af-a839-16d68565cf9d/resourceGroups/az-rg-testingGit-ma/providers/microsoft.insights/components/az-webapp-testingGit-ma</ApplicationInsightsResourceId>
+    <UserSecretsId>6eaca2da-6793-4795-9b21-b2e184527388</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Azure.Identity" Version="1.17.0" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.23.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.1" />
   </ItemGroup>
 
