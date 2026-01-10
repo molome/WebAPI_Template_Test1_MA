@@ -11,14 +11,16 @@ namespace WebAPI_Template_Test1_MA.Controllers
         {
             "Mohsin Ahmed",
             "Mohammed Mohalil",
-            "Zakir Hussain"
+            "Zakir Hussain",
+            "Nizammuddin"
         };
 
         Dictionary<int, string> empList = new Dictionary<int, string>()
         {
             {1, "Mohsin Ahmed" },
             {2, "Mohammed Mohalil" },
-            {3, "Zakir Hussain" }
+            {3, "Zakir Hussain" },
+            {4, "Nizammuddin" }
         };
 
         [HttpGet]
