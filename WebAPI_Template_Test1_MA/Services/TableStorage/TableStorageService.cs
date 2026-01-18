@@ -1,0 +1,49 @@
+﻿using Azure;
+using Azure.Data.Tables;
+using WebAPI_Template_Test1_MA.Models;
+
+namespace WebAPI_Template_Test1_MA.Services.TableStorage
+{
+    public class TableStorageService : ITableStorageService
+    {
+        private readonly IConfiguration _configuration;
+
+        public TableStorageService(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+        public async Task<AttendeeEntity> GetAttendee(string industry, string id)
+        {
+            var tableClient = await GetTableClient();
+            return await tableClient.GetEntityAsync<AttendeeEntity>(industry, id);
+        }
+
+        public async Task<List<AttendeeEntity>> GetAttendees()
+        {
+            var tableClient = await GetTableClient();
+            Pageable<AttendeeEntity> attendeeEntities = tableClient.Query<AttendeeEntity>();
+            return attendeeEntities.ToList();
+        }
+
+        public async Task UpsertAttendee(AttendeeEntity attendeeEntity)
+        {
+            var tableClient = await GetTableClient();
+            await tableClient.UpsertEntityAsync(attendeeEntity);
+        }
+
+        public async Task DeleteAttendee(string industry, string id)
+        {
+            var tableClient = await GetTableClient();
+            await tableClient.DeleteEntityAsync(industry, id);
+        }
+
+        private async Task<TableClient> GetTableClient()
+        {
+            var serviceClient = new TableServiceClient(_configuration.GetConnectionString("AzureStorageAccountConnection"));
+            var tableClient = serviceClient.GetTableClient(_configuration["StorageAccount:TableName"]);
+            await tableClient.CreateIfNotExistsAsync();
+            return tableClient;
+        }
+
+    }
+}
