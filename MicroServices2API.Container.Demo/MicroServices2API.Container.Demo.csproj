@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+	<ContainerRepository>microservices2api</ContainerRepository>
+	<!--<ContainerBaseImage>mcr.microsoft.com/dotnet/runtime:6.0</ContainerBaseImage>-->
+	 <!--<ContainerImageTag>1.0.1</ContainerImageTag>-->
+	  <ContainerImageTags>1.0.1</ContainerImageTags>
+	  <UserSecretsId>cc086784-f236-4e71-8ae9-0c4eb2125ae4</UserSecretsId>
+	  <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	  <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+	  
+  </PropertyGroup>
+
+	<ItemGroup>
+		<ContainerPort Include="8080" Type="tcp" />
+		<ContainerEnvironmentVariable Include="LOGGER_VERBOSITY" Value="Trace" />
+		<ContainerLabel Include="azure-course" Value="docker-and-azure" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.23.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+</Project>

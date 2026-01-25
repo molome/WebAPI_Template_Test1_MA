@@ -1,0 +1,13 @@
+services:
+  microservices1api.container.demo:
+    image: ${DOCKER_REGISTRY-}microservices1apicontainerdemo
+    build:
+      context: .
+      dockerfile: MicroServices1API.Container.Demo/Dockerfile
+
+  microservices2api.container.demo:
+    image: ${DOCKER_REGISTRY-}microservices2apicontainerdemo
+    build:
+      context: .
+      dockerfile: MicroServices2API.Container.Demo/Dockerfile
+

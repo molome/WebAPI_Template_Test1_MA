@@ -1,4 +1,14 @@
 <Solution>
   <Project Path="AzureFunctionApp.Demo/AzureFunctionApp.Demo.csproj" />
+  <Project Path="AZ_ADAuth_NetWebAPI1_Demo/AZ_ADAuth_NetWebAPI1_Demo.csproj" Id="a804ad06-0f5b-4080-aad6-3690906c446d" />
+  <Project Path="AZ_ADAuth_NetWebAPI2_Demo/AZ_ADAuth_NetWebAPI2_Demo.csproj" Id="2dbcbeff-5e90-4de8-a8d3-a9df91940d22" />
+  <Project Path="AZ_Auth_MVC_WebApplication.Demo/AZ_Auth_MVC_WebApplication.Demo.csproj" Id="d4a39dbf-4df5-42a3-83cf-6aa88a1ea955" />
+  <Project Path="AZ_B2C_Auth_MVC_WebApplication.Demo/AZ_B2C_Auth_MVC_WebApplication.Demo.csproj" Id="546c3c84-1f6b-40b7-bee7-b22beda87ef0" />
+  <Project Path="docker-compose.dcproj">
+    <Build />
+  </Project>
+  <Project Path="MicroServices1API.Container.Demo/MicroServices1API.Container.Demo.csproj" Id="0fd058c3-0a45-4120-b4e3-27551b5137ce" />
+  <Project Path="MicroServices2API.Container.Demo/MicroServices2API.Container.Demo.csproj" Id="0ae45512-3579-4b23-a06f-29bbdf373260" />
+  <Project Path="MicroServices3.Container.Demo/MicroServices3.Container.Demo.csproj" Id="7b1ab7d2-7add-46b3-8284-86f2f09d91e6" />
   <Project Path="WebAPI_Template_Test1_MA/WebAPI_Template_Test1_MA.csproj" />
 </Solution>

@@ -1,0 +1,22 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "AZ_Auth_MVC_WebApplication.Demo\\AZ_Auth_MVC_WebApplication.Demo.csproj",
+        "Action": "Start",
+        "DebugTarget": "IIS Express"
+      },
+      {
+        "Path": "AZ_ADAuth_NetWebAPI1_Demo\\AZ_ADAuth_NetWebAPI1_Demo.csproj",
+        "Action": "Start",
+        "DebugTarget": "IIS Express"
+      },
+      {
+        "Path": "AZ_ADAuth_NetWebAPI2_Demo\\AZ_ADAuth_NetWebAPI2_Demo.csproj",
+        "Action": "Start",
+        "DebugTarget": "IIS Express"
+      }
+    ]
+  }
+]
